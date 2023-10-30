@@ -32,5 +32,15 @@ export const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 100
+  },
+  menuContainer: {
+    margin: 30
+  },
+  menuButton: {
+    marginVertical: 10
+  },
+  menuButtonText: {
+    color: 'black',
+    fontSize: 20
   }
 });

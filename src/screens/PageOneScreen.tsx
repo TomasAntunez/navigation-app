@@ -23,7 +23,9 @@ export const PageOneScreen: FC<Props> = ({ navigation }) => {
 
       <Button title='Go to page two' onPress={ () => navigation.navigate('PageTwoScreen') } />
 
-      <Text style={{ color: 'black' }}>Navigate with arguments</Text>
+      <Text style={{ color: 'black', fontSize: 20, marginVertical: 20 }}>
+        Navigate with arguments
+      </Text>
 
 
       <View style={{ flexDirection: 'row' }}>

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Image, useWindowDimensions, View } from 'react-native';
+import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import {
   DrawerContentComponentProps, DrawerContentScrollView, createDrawerNavigator
 } from '@react-navigation/drawer';
@@ -31,7 +31,7 @@ export const LateralMenu: FC = () => {
 }
 
 
-const MenuContent: FC<DrawerContentComponentProps> = () => {
+const MenuContent: FC<DrawerContentComponentProps> = ({ navigation }) => {
   return (
     <DrawerContentScrollView>
       <View style={ styles.avatarContainer }>
@@ -39,6 +39,22 @@ const MenuContent: FC<DrawerContentComponentProps> = () => {
           source={{ uri: 'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif' }}
           style={ styles.avatar }
         />
+      </View>
+
+      <View style={ styles.menuContainer }>
+        <TouchableOpacity
+          style={ styles.menuButton }
+          onPress={ () => navigation.navigate('StackNavigator') }
+        >
+          <Text style={ styles.menuButtonText }>Navigation</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={ styles.menuButton }
+          onPress={ () => navigation.navigate('SettingsScreen') }
+        >
+          <Text style={ styles.menuButtonText }>Settings</Text>
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );
