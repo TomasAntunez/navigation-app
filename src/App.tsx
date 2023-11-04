@@ -4,16 +4,20 @@ import { FC } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 
 import {
+  // StackNavigator,
   // BasicLateralMenu,
-  LateralMenu
-} from './navigator';
+  LateralMenu,
+  // Tabs
+} from './navigators';
 
 
 const App: FC = () => {
   return (
     <NavigationContainer>
+      {/* <StackNavigator /> */}
       {/* <BasicLateralMenu /> */}
       <LateralMenu />
+      {/* <Tabs /> */}
     </NavigationContainer>
   );
 }

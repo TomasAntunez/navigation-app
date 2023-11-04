@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 
-import { RootStackParams } from '../navigator';
+import { RootStackParams } from '../navigators';
 import { styles } from '../theme';
 
 
