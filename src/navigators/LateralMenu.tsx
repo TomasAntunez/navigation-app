@@ -6,7 +6,7 @@ import {
 
 import { SettingsScreen } from '../screens';
 import { styles } from '../theme';
-import { BottomTab } from './tabs';
+import { BottomTabNavigator } from './BottomTabNavigator';
 
 
 const Drawer = createDrawerNavigator();
@@ -24,7 +24,7 @@ export const LateralMenu: FC = () => {
       }}
       drawerContent={ props => <MenuContent { ...props } /> }
     >
-      <Drawer.Screen name="Tabs" component={ BottomTab } />
+      <Drawer.Screen name="Tabs"           component={ BottomTabNavigator } />
       <Drawer.Screen name="SettingsScreen" component={ SettingsScreen } />
     </Drawer.Navigator>
   );
