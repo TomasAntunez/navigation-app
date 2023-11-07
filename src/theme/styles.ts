@@ -42,5 +42,9 @@ export const styles = StyleSheet.create({
   menuButtonText: {
     color: 'black',
     fontSize: 20
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   }
 });

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { ColorPalette } from '../theme';
 import { ChatScreen, ContactScreen, AlbumsScreen } from '../screens';
@@ -21,9 +21,9 @@ type RootStackParamList = {
 
 
 const bottomTabScreenIcons: { [key in TopTabScreenName]: string } = {
-  [TopTabScreenName.CHAT]:    'Ch',
-  [TopTabScreenName.CONTACT]: 'Co',
-  [TopTabScreenName.ALBUMS]:  'Al',
+  [TopTabScreenName.CHAT]:    'chatbox-ellipses-outline',
+  [TopTabScreenName.CONTACT]: 'people-outline',
+  [TopTabScreenName.ALBUMS]:  'albums-outline',
 };
 
 
@@ -65,9 +65,7 @@ export const TopTabNavigator: FC = () => {
           fontSize: 15
         },
         tabBarIcon: ({ color }) => (
-          <Text style={{ color }}>
-            { bottomTabScreenIcons[route.name] }
-          </Text>
+          <Icon name={ bottomTabScreenIcons[route.name] } size={25} color={ color } />
         )
       })}
     >

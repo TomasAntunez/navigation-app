@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { TabOneScreen } from '../screens';
 import { ColorPalette } from '../theme';
@@ -25,9 +25,9 @@ const Tab = createBottomTabNavigator<RootStackParamList>();
 
 
 const bottomTabScreenIcons: { [key in BottomTabScreenName]: string } = {
-  [BottomTabScreenName.TAB_ONE]:           'T1',
-  [BottomTabScreenName.TOP_TAB_NAVIGATOR]: 'T2',
-  [BottomTabScreenName.STACK_NAVIGATOR]:   'T3',
+  [BottomTabScreenName.TAB_ONE]:           'extension-puzzle-outline',
+  [BottomTabScreenName.TOP_TAB_NAVIGATOR]: 'game-controller-outline',
+  [BottomTabScreenName.STACK_NAVIGATOR]:   'hammer-outline',
 };
 
 
@@ -46,9 +46,7 @@ export const BottomTabNavigator: FC = () => {
           fontSize: 15
         },
         tabBarIcon: ({ color }) => (
-          <Text style={{ color }}>
-            { bottomTabScreenIcons[route.name] }
-          </Text>
+          <Icon name={ bottomTabScreenIcons[route.name] } size={25} color={ color } />
         )
       })}
     >
@@ -62,7 +60,7 @@ export const BottomTabNavigator: FC = () => {
       /> */}
       <Tab.Screen
         name={ BottomTabScreenName.TAB_ONE }
-        options={{ title: 'Tab1' }}
+        options={{ title: 'Tab1', headerShown: false }}
         component={ TabOneScreen }
       />
       <Tab.Screen
