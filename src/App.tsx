@@ -9,15 +9,18 @@ import {
   LateralMenu,
   // Tabs
 } from './navigators';
+import { AuthProvider } from './context';
 
 
 const App: FC = () => {
   return (
     <NavigationContainer>
-      {/* <StackNavigator /> */}
-      {/* <BasicLateralMenu /> */}
-      <LateralMenu />
-      {/* <Tabs /> */}
+      <AuthProvider>
+        {/* <StackNavigator /> */}
+        {/* <BasicLateralMenu /> */}
+        <LateralMenu />
+        {/* <Tabs /> */}
+      </AuthProvider>
     </NavigationContainer>
   );
 }

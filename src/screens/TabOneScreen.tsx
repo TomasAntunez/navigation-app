@@ -1,9 +1,9 @@
 import { FC, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/Ionicons';
 
-import { styles, ColorPalette } from '../theme';
+import { styles } from '../theme';
+import { TouchableIcon } from '../components';
 
 
 const iconNames = [
@@ -35,9 +35,7 @@ export const TabOneScreen: FC = () => {
 
       <View style={ styles.iconsContainer }>
         {
-          iconNames.map( (name, index) => (
-            <Icon key={ index } name={ name } size={ 80 } color={ ColorPalette.primary } />
-          ))
+          iconNames.map( (name, index) => <TouchableIcon key={ index } name={ name } /> )
         }
       </View>
     </View>

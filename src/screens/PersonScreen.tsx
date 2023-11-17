@@ -4,6 +4,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 
 import { RootStackParams } from '../navigators';
 import { styles } from '../theme';
+import { useAuth } from '../hooks';
 
 
 // interface RouteParams {
@@ -19,8 +20,14 @@ export const PersonScreen: FC<Props> = ({ route, navigation }) => {
   // const params = route.params as RouteParams;
   const { params } = route;
 
+  const { changeUsername } = useAuth();
+
+  
   useEffect( () => {
-    navigation.setOptions({ title: params.name });
+    const { name } = params;
+
+    navigation.setOptions({ title: name });
+    changeUsername( name );
   }, []);
 
 
